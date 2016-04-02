@@ -1,0 +1,16 @@
+;; 2016.04.02
+;; jcubillos
+;;
+;; gitignore for Django using pyCharm
+;;
+
+;;files to ignore
+settings.py
+
+;;extensions to ignore
+*.log
+*.pot
+*.pyc
+
+;;directories to ignore
+.idea/
