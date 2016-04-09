@@ -1,9 +1,10 @@
 from fabric.api import local
 
-def prepare_deployment(branch_name):
+def prepare_deployment_with_tag(tag_name):
     local('python manage.py test scrummer')
     local('git add -p && git commit')
-    local('git checkout master && git merge ' + branch_name)
+    local('git checkout master && git merge develop')
+    local('git tag -l ' + tag_name)
     local('git checkout develop')
 
 from fabric.api import lcd
