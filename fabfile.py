@@ -16,7 +16,7 @@ def deploy():
     run("mkdir hola")
 
     '''
-    with lcd('/path/to/my/prod/area/'):
+    with lcd('/path/to/my/prod/area/'): 
         local('git pull /my/path/to/dev/area/')
         local('python manage.py migrate myapp')
         local('python manage.py test myapp')
