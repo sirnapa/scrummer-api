@@ -1,4 +1,7 @@
-from fabric.api import local
+from fabric.api import *
+
+env.user = 'produccion'
+env.hosts = ['192.168.1.10']
 
 def prepare_deployment_with_tag(tag_name):
     local('python manage.py test scrummer')
@@ -10,8 +13,12 @@ def prepare_deployment_with_tag(tag_name):
 from fabric.api import lcd
 
 def deploy():
+    run("mkdir hola")
+
+    '''
     with lcd('/path/to/my/prod/area/'):
         local('git pull /my/path/to/dev/area/')
         local('python manage.py migrate myapp')
         local('python manage.py test myapp')
         local('/my/command/to/restart/webserver')
+    '''
