@@ -9,7 +9,7 @@ def prepare_deployment_with_tag(tag_name):
 
 from fabric.api import lcd
 
-def deploy():
+def deploy(): 
     with lcd('/path/to/my/prod/area/'):
         local('git pull /my/path/to/dev/area/')
         local('python manage.py migrate myapp')
