@@ -4,7 +4,7 @@ env.user = 'produccion'
 env.hosts = ['192.168.1.10']
 
 def prepare_deployment_with_tag(tag_name):
-    local('python manage.py test scrummer')
+    local('python manage.py test scrummer') 
     local('git add -p && git commit')
     local('git checkout master && git merge develop')
     local('git tag "' + tag_name + '"')
