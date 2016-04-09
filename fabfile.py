@@ -1,7 +1,7 @@
 from fabric.api import *
 
 env.user = 'produccion'
-env.hosts = ['192.168.1.10']
+env.hosts = ['192.168.1.250']
 
 def prepare_deployment_with_tag(tag_name):
     local('python manage.py test scrummer') 
@@ -12,8 +12,9 @@ def prepare_deployment_with_tag(tag_name):
 
 from fabric.api import lcd
 
-def deploy():
-    run("mkdir hola")
+def deploy(tag_name):
+    with cd('/home/produccion/scrummer_backend'):
+        run('git checkout ' + tag_name + '')
 
     '''
 <<<<<<< HEAD
