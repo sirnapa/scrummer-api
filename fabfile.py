@@ -12,9 +12,6 @@ def prepare_deployment_with_tag(tag_name):
 
 from fabric.api import lcd
 
-<<<<<<< HEAD
-def deploy(): 
-=======
 def deploy():
     run("mkdir hola")
 
