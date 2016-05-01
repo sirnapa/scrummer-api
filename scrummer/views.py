@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User, Group
+from scrummer.models import Proyecto
 from rest_framework import viewsets
-from scrummer_is.serializers import UserSerializer, GroupSerializer
+from scrummer_is.serializers import UserSerializer, GroupSerializer, ProyectoSerializer
+
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,3 +19,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class ProyectoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Proyecto.objects.all()
+    serializer_class = ProyectoSerializer
+
