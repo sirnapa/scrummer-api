@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_swagger',
     'scrummer',
+    'permiso',
+    'proyecto',
+    'rol',
 ]
 
 REST_FRAMEWORK = {
