@@ -25,8 +25,3 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ('url', 'name')
-
-class ProyectoSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Proyecto
-        fields = ('nombre', 'descripcion')
