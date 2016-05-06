@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from scrummer_is.serializers import UserSerializer, GroupSerializer, ProyectoSerializer
+from scrummer_is.serializers import UserSerializer, GroupSerializer
 
 
 from scrummer_is.serializers import UserSerializer, GroupSerializer

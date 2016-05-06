@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User, Group
-from scrummer.models import Proyecto
 from rest_framework import serializers
 
 from django.conf import settings
@@ -12,7 +11,6 @@ from rest_framework.authtoken.models import Token
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
-
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

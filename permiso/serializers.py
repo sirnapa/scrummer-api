@@ -3,11 +3,11 @@ from rest_framework.reverse import reverse
 from permiso.models import permiso
 
 class permisoSerializer(serializers.ModelSerializer):
-    links = serializers.SerializerMethodField('get_links')
+    #links = serializers.SerializerMethodField('get_links')
 
     class Meta:
         model = permiso
-        fields = ('nombre')
+        fields = ('nombre',)
 
     def get_links(self,obj):
         request= self.context['request']
