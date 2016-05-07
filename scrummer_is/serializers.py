@@ -1,3 +1,4 @@
+from scrummer.models import Usuario
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
@@ -26,3 +27,39 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ('url', 'name')
+
+
+class UsuarioSerializer(serializers.ModelSerializer):
+
+        id = serializers.IntegerField(source = 'pk', read_only = True)
+        username = serializers.CharField(source = 'user.username', read_only = True)
+        email = serializers.CharField(source = 'user.email')
+        first_name = serializers.CharField(source = 'user.first_name')
+        last_name = serializers.CharField(source = 'user.last_name')
+
+        class Meta:
+                model = Usuario
+                fields = (
+                        'id', 'username', 'email', 'first_name', 'last_name',
+                        'created_at', 'updated_at',
+                )
+                read_only_fields = ('created_at', 'updated_at',)
+
+        def update(self, instance, validated_data):
+                # First, update the User
+                user_data = validated_data.pop('user', None)
+                for attr, value in user_data.items():
+                        setattr(instance.user, attr, value)
+                # Then, update Usuario
+                for attr, value in validated_data.items():
+                        setattr(instance, attr, value)
+                instance.save()
+                return instance
+
+        def create(self, validated_data):
+
+                user_data = validated_data.pop('user')
+                user = User.objects.create(**user_data)
+
+                profile = Usuario.objects.create(user = user, **validated_data)
+                return profile
