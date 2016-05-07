@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'rol',
     'UserStory',
     'Sprint',
+    'flujo',
+    'plantilla_de_flujo',
+    'actividad',
 ]
 
 REST_FRAMEWORK = {
