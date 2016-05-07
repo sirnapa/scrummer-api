@@ -41,15 +41,16 @@ class UsuarioSerializer(serializers.ModelSerializer):
                 model = Usuario
                 fields = (
                         'id', 'username', 'email', 'first_name', 'last_name',
-                        'created_at', 'updated_at',
+                        'created_at', 'updated_at','url',
                 )
-                read_only_fields = ('created_at', 'updated_at',)
+                read_only_fields = ('created_at', 'updated_at','url')
 
         def update(self, instance, validated_data):
                 # First, update the User
                 user_data = validated_data.pop('user', None)
                 for attr, value in user_data.items():
                         setattr(instance.user, attr, value)
+                instance.user.save()
                 # Then, update Usuario
                 for attr, value in validated_data.items():
                         setattr(instance, attr, value)
