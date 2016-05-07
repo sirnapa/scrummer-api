@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'permiso',
     'proyecto',
     'rol',
+    'flujo',
+    'plantilla_de_flujo',
+    'actividad',
 ]
 
 REST_FRAMEWORK = {
