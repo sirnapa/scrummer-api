@@ -9,6 +9,8 @@ from rol.urls import router
 from permiso import views as viewsPermiso
 from proyecto import views as viewsProyecto
 from rol import views as viewsRol
+from UserStory import views as viewsUserStory
+from Sprint import views as viewsSprint
 from scrummer import views
 
 router = DefaultRouter()
@@ -18,6 +20,8 @@ router.register(r'groups', views.GroupViewSet)
 router.register(r'permisos', viewsPermiso.permisoViewSet)
 router.register(r'proyectos', viewsProyecto.proyectoViewSet)
 router.register(r'roles',viewsRol.rolViewSet)
+router.register(r'userStories', viewsUserStory.UserStoryViewSet)
+router.register(r'sprints', viewsSprint.SprintViewSet)
 
 # Wire up our API using automatic URL routing...
 # Additionally, we include login URLs for the browsable API.

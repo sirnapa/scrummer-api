@@ -9,6 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+
 class UserViewSet(viewsets.ModelViewSet,APIView):
     """
     API endpoint that allows users to be viewed or edited.

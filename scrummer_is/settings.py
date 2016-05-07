@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'permiso',
     'proyecto',
     'rol',
+    'UserStory',
+    'Sprint',
 ]
 
 REST_FRAMEWORK = {
