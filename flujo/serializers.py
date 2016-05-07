@@ -9,7 +9,7 @@ class flujoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = flujo
-        fields = ('nombre',)
+        fields = ('nombre','proyecto',)
 
     def get_links(self, obj):
         request = self.context['request']
