@@ -14,6 +14,10 @@ from scrummer import views
 from actividad import views as viewsActividad
 from flujo import views as viewsFlujo
 from plantilla_de_flujo import views as viewsPlantilla_de_Flujo
+from Nota import views as viewsNota
+from Historial import views as viewsHistorial
+from Adjunto import views as viewsAdjunto
+from UserStoryEstadoActividad import views as viewsUserStoryEstadoActividad
 
 router = DefaultRouter()
 
@@ -28,6 +32,10 @@ router.register(r'actividad', viewsActividad.actividadViewSet)
 router.register(r'flujo', viewsFlujo.flujoViewSet)
 router.register(r'plantilla_de_flujo',viewsPlantilla_de_Flujo.plantilla_de_flujoViewSet)
 router.register(r'usuarios', views.UsuarioViewSet)
+router.register(r'notas', viewsNota.NotaViewSet)
+router.register(r'historiales', viewsHistorial.HistorialViewSet)
+router.register(r'adjuntos',viewsAdjunto.AdjuntoViewSet)
+router.register(r'userStoryEstadoActividades', viewsUserStoryEstadoActividad.UserStoryEstadoActividadViewSet)
 # Wire up our API using automatic URL routing...
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [

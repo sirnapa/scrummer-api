@@ -49,10 +49,15 @@ INSTALLED_APPS = [
     'flujo',
     'plantilla_de_flujo',
     'actividad',
+    'Nota',
+    'Historial',
+    'Adjunto',
+    'UserStoryEstadoActividad',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
