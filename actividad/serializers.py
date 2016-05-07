@@ -6,7 +6,7 @@ class actividadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = actividad
-        fields = ('nombre','orden',)
+        fields = ('nombre','orden','flujo',)
 
     def get_links(self, obj):
         request = self.context['request']
