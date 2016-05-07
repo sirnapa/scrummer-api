@@ -5,12 +5,12 @@ from proyecto.models import proyecto
 
 proyect= proyecto()
 class rolSerializer(serializers.ModelSerializer):
-    assigned = serializers.SlugRelatedField (
-        slug_field=proyect.nombre, required=False, read_only=True)
+   # assigned = serializers.SlugRelatedField (
+        #slug_field=proyect.nombre, required=False, read_only=True)
     #links = serializers.SerializerMethodField('get_links')
     class Meta:
         model = rol
-        fields = ('nombre','permisos','proyecto','assigned',)
+        fields = ('nombre','permisos','proyecto',)
 
     def get_links(self, obj):
         request = self.context['request']
