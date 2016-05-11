@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from Sprint.models import Sprint
 from flujo.models import flujo
 
-
 class UserStory (models.Model):
     """Clase UserStory"""
     class Meta:
