@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from Sprint.models import Sprint
+from flujo.models import flujo
 
 
 class UserStory (models.Model):
@@ -16,12 +17,8 @@ class UserStory (models.Model):
     tiempoEstimado = models.SmallIntegerField(default=0)
     tiempoReal = models.SmallIntegerField(default=0)
     sprint = models.ForeignKey(Sprint, null=True, blank=True, default=None)
-    #historial
-    #adjunto
+    flujo = models.ForeignKey(flujo, null=True, blank=True, default=None)
     #prioridad
-    #nota
-    #flujo
-    #sprint
 
     def __unicode__(self):
      return self.descripcion

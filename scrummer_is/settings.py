@@ -49,6 +49,10 @@ INSTALLED_APPS = [
     'flujo',
     'plantilla_de_flujo',
     'actividad',
+    'Nota',
+    'Historial',
+    'Adjunto',
+    'UserStoryEstadoActividad',
 ]
 
 REST_FRAMEWORK = {

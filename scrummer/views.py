@@ -29,9 +29,5 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 class UsuarioViewSet(viewsets.ModelViewSet):
-
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
-
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
