@@ -5,4 +5,4 @@ from UserStoryEstadoActividad.models import UserStoryEstadoActividad
 class UserStoryEstadoActividadSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserStoryEstadoActividad
-        fields = ('userStory','actividad',)
+        fields = ('userStory','actividad','estado',)

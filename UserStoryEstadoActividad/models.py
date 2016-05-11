@@ -11,10 +11,15 @@ class UserStoryEstadoActividad (models.Model):
         verbose_name = 'userStoryEstadoActividad'
         verbose_name_plural = 'userStoryEstadoActividades'
 
-    #estado
+    ESTADO = (
+        ('0', 'TO DO'),
+        ('1', 'DOING'),
+        ('2', 'DONE'),
+    )
+
     userStory = models.ForeignKey(UserStory, null=True, blank=True, default=None)
     actividad = models.ForeignKey(actividad, null=True, blank=True, default=None)
-
+    estado = models.CharField(max_length=1, choices=ESTADO, default=0)
 
     def __unicode__(self):
      return self.actividad
