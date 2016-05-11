@@ -4,7 +4,6 @@ from rest_framework import viewsets
 from scrummer_is.serializers import UserSerializer, GroupSerializer, UsuarioSerializer
 from scrummer_is.serializers import UserSerializer, GroupSerializer
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -14,8 +13,7 @@ class UserViewSet(viewsets.ModelViewSet,APIView):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    authentication_classes = (BasicAuthentication, TokenAuthentication,)
-
+    authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
     queryset = User.objects.all().order_by('-date_joined')
@@ -32,5 +30,4 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
-
     serializer_class = UsuarioSerializer
