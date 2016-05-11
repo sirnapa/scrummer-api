@@ -28,19 +28,19 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
 class UsuarioSerializer(serializers.ModelSerializer):
 
-        id = serializers.IntegerField(source = 'pk', read_only = True)
-        username = serializers.CharField(source = 'user.username', read_only = True)
-        email = serializers.CharField(source = 'user.email')
-        first_name = serializers.CharField(source = 'user.first_name')
-        last_name = serializers.CharField(source = 'user.last_name')
+        id = serializers.IntegerField(source='pk', read_only=True)
+        username = serializers.CharField(source='user.username', required=True)
+        email = serializers.CharField(source='user.email')
+        first_name = serializers.CharField(source='user.first_name')
+        last_name = serializers.CharField(source='user.last_name')
 
         class Meta:
                 model = Usuario
                 fields = (
                         'id', 'username', 'email', 'first_name', 'last_name',
-                        'created_at', 'updated_at','url',
+                        'created_at', 'updated_at', 'url',
                 )
-                read_only_fields = ('created_at', 'updated_at','url')
+                read_only_fields = ('created_at', 'updated_at', 'url')
 
         def update(self, instance, validated_data):
                 # First, update the User
@@ -59,5 +59,4 @@ class UsuarioSerializer(serializers.ModelSerializer):
                 user_data = validated_data.pop('user')
                 user = User.objects.create(**user_data)
 
-                profile = Usuario.objects.create(user = user, **validated_data)
-                return profile
+                return Usuario(user=user, **validated_data)

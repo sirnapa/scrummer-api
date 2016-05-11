@@ -13,7 +13,7 @@ class UserViewSet(viewsets.ModelViewSet,APIView):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    authentication_classes = (TokenAuthentication)
+    authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
     queryset = User.objects.all().order_by('-date_joined')
@@ -29,5 +29,9 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 class UsuarioViewSet(viewsets.ModelViewSet):
+
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
