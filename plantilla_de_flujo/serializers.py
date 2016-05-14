@@ -9,7 +9,7 @@ class plantilla_de_flujoSerializer(serializers.ModelSerializer):
     #    slug_field=actividad.nombre, required=False, read_only=True)
     class Meta:
         model = plantilla_de_flujo
-        fields = ('nombre','actividades',)
+        fields = ('nombre','actividades','id',)
 
     def get_links(self, obj):
         request = self.context['request']

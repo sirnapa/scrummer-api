@@ -12,5 +12,6 @@ class actividad (models.Model):
     nombre = models.CharField( max_length=45)
     orden = models.IntegerField()
     flujo = models.ForeignKey(flujo, null=False, blank=False, default=None)
+
     def __unicode__(self):
         return self.nombre
