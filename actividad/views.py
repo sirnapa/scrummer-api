@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+#utf-8
 from rest_framework import viewsets, authentication, permissions
 from actividad.models import actividad
 from actividad.serializers import actividadSerializer
