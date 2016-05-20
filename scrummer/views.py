@@ -29,5 +29,5 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 class UsuarioViewSet(viewsets.ModelViewSet):
-    queryset = Usuario.objects.all()
+    queryset = Usuario.objects.order_by('nombre')
     serializer_class = UsuarioSerializer

@@ -19,7 +19,7 @@ from Historial import views as viewsHistorial
 from Adjunto import views as viewsAdjunto
 from UserStoryEstadoActividad import views as viewsUserStoryEstadoActividad
 
-router = DefaultRouter()
+router = DefaultRouter(trailing_slash=True)
 
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
