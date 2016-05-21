@@ -28,11 +28,14 @@ from UserStoryEstadoActividad import views as viewsUserStoryEstadoActividad
 
 
 
+
 import permission; permission.autodiscover()
 
 
 
-router = DefaultRouter()
+
+router = DefaultRouter(trailing_slash=True)
+
 
 router.register(r'users', views.UserViewSet)
 #router.register(r'usuarios',viewsUsuario.UsuarioViewSet)

@@ -4,7 +4,7 @@ from django.db import models
 
 class proyecto (models.Model):
     """Clase proyecto"""
-    class Meta:
+    class JSONAPIMeta:
         verbose_name = 'proyecto'
         verbose_name_plural = 'proyectos'
 
