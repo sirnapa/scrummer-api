@@ -3,12 +3,19 @@ from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework.routers import DefaultRouter
 
+#para permisos
+from django.conf.urls import patterns
+from django.contrib import admin
+#########
+
+
 #Import de los modulos
 
 from permiso import views as viewsPermiso
 from proyecto import views as viewsProyecto
 from rol import views as viewsRol
 from UserStory import views as viewsUserStory
+#from usuario import views as viewsUsuario
 from Sprint import views as viewsSprint
 from scrummer import views
 from actividad import views as viewsActividad
@@ -19,9 +26,16 @@ from Historial import views as viewsHistorial
 from Adjunto import views as viewsAdjunto
 from UserStoryEstadoActividad import views as viewsUserStoryEstadoActividad
 
+
+
+import permission; permission.autodiscover()
+
+
+
 router = DefaultRouter()
 
 router.register(r'users', views.UserViewSet)
+#router.register(r'usuarios',viewsUsuario.UsuarioViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'permisos', viewsPermiso.permisoViewSet)
 router.register(r'proyectos', viewsProyecto.proyectoViewSet)

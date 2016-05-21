@@ -5,4 +5,4 @@ from Sprint.models import Sprint
 class SprintSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sprint
-        fields = ('estado',)
+        fields = ('id','estado','horas_hombre',)

@@ -3,7 +3,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from Sprint.models import Sprint
 from flujo.models import flujo
-from enum import Enum
+from Historial.models import Historial
+from Adjunto.models import Adjunto
+from Nota.models import Nota
+#from enum import Enum
 
 class UserStory (models.Model):
     """Clase UserStory"""
@@ -25,6 +28,8 @@ class UserStory (models.Model):
     sprint = models.ForeignKey(Sprint, null=True, blank=True, default=None)
     flujo = models.ForeignKey(flujo, null=True, blank=True, default=None)
     prioridad = models.CharField(max_length=1, choices=PRIORIDAD, default=0)
-
+    historial = models.ForeignKey(Historial, null=True, blank=True, default=None)
+    adjunto = models.ForeignKey(Adjunto, null=True, blank=True, default=None)
+    nota = models.ForeignKey(Nota, null=True, blank=True, default=None)
     def __unicode__(self):
      return self.descripcion

@@ -12,13 +12,15 @@ class DefaultsMixin(object):
     )
 
     permissions_classes = (
-        permissions.IsAuthenticated,
+        permissions.IsAuthenticated, permissions.DjangoObjectPermissions,
     )
     paginate_by = 25
     paginate_by_param = 'page_size'
     max_paginate_by = 100
 
 class rolViewSet(viewsets.ModelViewSet):
+
     queryset = rol.objects.order_by('nombre')
     serializer_class = rolSerializer
+    permission_classes = (permissions.DjangoObjectPermissions,)
 

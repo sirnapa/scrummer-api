@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
-from UserStory.models import UserStory
+#from UserStory.models import UserStory
 
 
 
@@ -12,8 +12,8 @@ class Historial (models.Model):
 
     descripcion = models.CharField(max_length=150)
     fecha = models.DateField()
-    userStory = models.ForeignKey(UserStory, null=True, blank=True, default=None)
+#    userStory = models.ForeignKey(UserStory, null=True, blank=True, default=None)
 
 
     def __unicode__(self):
-     return self.texto
+     return self.descripcion

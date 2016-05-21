@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'scrummer',
     'permiso',
+    'permission',
     'proyecto',
     'rol',
+#   'usuario',
     'UserStory',
     'Sprint',
     'flujo',
@@ -54,7 +56,7 @@ INSTALLED_APPS = [
     'Adjunto',
     'UserStoryEstadoActividad',
 ]
-
+#AUTH_USER_MODEL= 'usuario.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
@@ -81,7 +83,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'scrummer_is.urls'
-
+PERMISSION_CHECK_TEMPLATES_OPTIONS_BUILTINS=False
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -135,6 +137,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # default
+    'permission.backends.PermissionBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/

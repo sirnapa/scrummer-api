@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
-from UserStory.models import UserStory
+#from UserStory.models import UserStory
 
 
 
@@ -11,7 +11,7 @@ class Nota (models.Model):
         verbose_name_plural = 'notas'
 
     texto = models.CharField(max_length=150)
-    userStory = models.ForeignKey(UserStory, null=True, blank=True, default=None)
+#    userStory = models.ForeignKey(UserStory, null=True, blank=True, default=None)
 
 
     def __unicode__(self):
