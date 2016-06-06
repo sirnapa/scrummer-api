@@ -3,6 +3,7 @@ from django.db import models
 from proyecto.models import proyecto
 
 
+
 class flujo (models.Model):
     class Meta:
         verbose_name = 'flujo'
@@ -11,5 +12,7 @@ class flujo (models.Model):
     nombre = models.CharField(unique=True, max_length=45)
     proyecto = models.ForeignKey(proyecto, null=True, blank=True, default=None)
 
-    def __unicode__(self):
-        return self.nombre
+
+def __unicode__(self):
+  return self.nombre
+

@@ -5,4 +5,4 @@ from Adjunto.models import Adjunto
 class AdjuntoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Adjunto
-        fields = ('nombre','userStory','archivo')
+        fields = ('nombre','archivo')

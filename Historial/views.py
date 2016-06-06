@@ -2,6 +2,15 @@ from rest_framework import viewsets, authentication, permissions
 from Historial.models import Historial
 from Historial.serializers import HistorialSerializer
 
+
+
+
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
+
+
 class DefaultsMixin(object):
     """Configuracion por defecto para la autenticacion, permisos, filtrado y paginacion de la view"""
 
@@ -21,3 +30,4 @@ class DefaultsMixin(object):
 class HistorialViewSet(viewsets.ModelViewSet):
     queryset = Historial.objects.order_by('fecha')
     serializer_class = HistorialSerializer
+

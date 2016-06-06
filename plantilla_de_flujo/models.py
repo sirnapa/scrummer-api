@@ -1,7 +1,9 @@
 from __future__ import unicode_literals
 
 from django.db import models
-import json
+
+
+from django.contrib import admin
 
 class plantilla_de_flujo (models.Model):
     """Clase Plantilla de flujo"""
@@ -21,5 +23,9 @@ class plantilla_de_flujo (models.Model):
     #    return json.loads(self.actividades)
 
 
-    def __unicode__(self):
-        return self.nombre
+
+
+
+
+def __unicode__(self):
+ return self.nombre

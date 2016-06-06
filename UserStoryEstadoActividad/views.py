@@ -2,6 +2,10 @@ from rest_framework import viewsets, authentication, permissions
 from UserStoryEstadoActividad.models import UserStoryEstadoActividad
 from UserStoryEstadoActividad.serializers import UserStoryEstadoActividadSerializer
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
 class DefaultsMixin(object):
     """Configuracion por defecto para la autenticacion, permisos, filtrado y paginacion de la view"""
 
@@ -21,3 +25,5 @@ class DefaultsMixin(object):
 class UserStoryEstadoActividadViewSet(viewsets.ModelViewSet):
     queryset = UserStoryEstadoActividad.objects.order_by('actividad')
     serializer_class = UserStoryEstadoActividadSerializer
+
+

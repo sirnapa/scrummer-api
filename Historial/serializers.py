@@ -5,4 +5,4 @@ from Historial.models import Historial
 class HistorialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Historial
-        fields = ('descripcion','fecha','userStory',)
+        fields = ('descripcion','fecha',)

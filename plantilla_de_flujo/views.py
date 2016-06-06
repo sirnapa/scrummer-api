@@ -3,6 +3,12 @@ from rest_framework import viewsets, authentication, permissions
 from plantilla_de_flujo.models import plantilla_de_flujo
 from plantilla_de_flujo.serializers import plantilla_de_flujoSerializer
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
+
+
 class DefaultsMixin(object):
     """Configuracion por defecto para la autenticacion, permisos, filtrado y paginacion de la view"""
 
@@ -20,3 +26,4 @@ class DefaultsMixin(object):
 class plantilla_de_flujoViewSet(viewsets.ModelViewSet):
     queryset = plantilla_de_flujo.objects.order_by('nombre')
     serializer_class = plantilla_de_flujoSerializer
+

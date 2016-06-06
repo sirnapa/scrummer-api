@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib import admin
 from flujo.models import flujo
 class actividad (models.Model):
 
@@ -13,5 +14,7 @@ class actividad (models.Model):
     orden = models.IntegerField()
     flujo = models.ForeignKey(flujo, null=False, blank=False, default=None)
 
-    def __unicode__(self):
-        return self.nombre
+
+
+def __unicode__(self):
+ return self.nombre

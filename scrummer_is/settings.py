@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'permission',
     'proyecto',
     'rol',
-#   'usuario',
     'UserStory',
     'Sprint',
     'flujo',
@@ -81,7 +80,7 @@ REST_FRAMEWORK = {
     # agregado
 
 
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated','rest_framework.permissions.DjangoObjectPermissions'),
     'PAGE_SIZE': 10,
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
     'TEST_REQUEST_RENDERER_CLASSES': (

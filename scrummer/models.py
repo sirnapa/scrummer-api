@@ -11,12 +11,12 @@ class Usuario(models.Model):
     user = models.OneToOneField(User, primary_key=True, related_name='profile')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    nombre = models.CharField(max_length=30, null=True)
-    apellido = models.CharField(max_length=30, null=True)
-    direccion = models.CharField(max_length=150, null=True)
-    telefono = models.CharField(max_length=150, null=True)
-    observacion = models.CharField(max_length=150, null=True)
-    estado = models.BooleanField(default=False)
+  #  nombre = models.CharField(max_length=30, null=True)
+   # apellido = models.CharField(max_length=30, null=True)
+    # direccion = models.CharField(max_length=150, null=True)
+    # telefono = models.CharField(max_length=150, null=True)
+    # observacion = models.CharField(max_length=150, null=True)
+    # estado = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.user.username

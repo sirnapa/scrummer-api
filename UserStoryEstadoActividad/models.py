@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 from UserStory.models import UserStory
 from actividad.models import actividad
-
+from django.contrib import admin
 
 
 class UserStoryEstadoActividad (models.Model):
@@ -21,5 +21,7 @@ class UserStoryEstadoActividad (models.Model):
     actividad = models.ForeignKey(actividad, null=True, blank=True, default=None)
     estado = models.CharField(max_length=1, choices=ESTADO, default=0)
 
-    def __unicode__(self):
-     return self.actividad
+
+
+def __unicode__(self):
+ return self.actividad

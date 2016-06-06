@@ -34,7 +34,7 @@ import permission; permission.autodiscover()
 
 
 
-router = DefaultRouter(trailing_slash=True)
+router = DefaultRouter(trailing_slash=False)
 
 
 router.register(r'users', views.UserViewSet)
@@ -47,7 +47,7 @@ router.register(r'userStories', viewsUserStory.UserStoryViewSet)
 router.register(r'sprints', viewsSprint.SprintViewSet)
 router.register(r'actividad', viewsActividad.actividadViewSet)
 router.register(r'flujo', viewsFlujo.flujoViewSet)
-router.register(r'plantilla_de_flujo',viewsPlantilla_de_Flujo.plantilla_de_flujoViewSet)
+router.register(r'plantilla-de-flujos',viewsPlantilla_de_Flujo.plantilla_de_flujoViewSet)
 router.register(r'usuarios', views.UsuarioViewSet)
 router.register(r'notas', viewsNota.NotaViewSet)
 router.register(r'historiales', viewsHistorial.HistorialViewSet)
