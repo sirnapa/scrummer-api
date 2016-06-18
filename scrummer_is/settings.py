@@ -88,6 +88,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.TemplateHTMLRenderer'
     )
+
 }
 
 MIDDLEWARE_CLASSES = [
@@ -185,3 +186,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+# Para evitar error 409
+JSON_API_PLURALIZE_TYPES = True
