@@ -8,11 +8,11 @@ from Adjunto.models import Adjunto
 from Nota.models import Nota
 #from enum import Enum
 
-class UserStory (models.Model):
+class userstory (models.Model):
     """Clase UserStory"""
     class Meta:
-        verbose_name = 'userStory'
-        verbose_name_plural = 'userStories'
+        verbose_name = 'userstory'
+        verbose_name_plural = 'userstorys'
 
     PRIORIDAD = (
         ('0', 'Baja'),

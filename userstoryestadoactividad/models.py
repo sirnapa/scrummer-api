@@ -1,11 +1,11 @@
 from __future__ import unicode_literals
 from django.db import models
-from UserStory.models import UserStory
+from userstory.models import userstory
 from actividad.models import actividad
 from django.contrib import admin
 
 
-class UserStoryEstadoActividad (models.Model):
+class userstoryestadoactividad (models.Model):
     """Clase Nota"""
     class Meta:
         verbose_name = 'userStoryEstadoActividad'
@@ -17,7 +17,7 @@ class UserStoryEstadoActividad (models.Model):
         ('2', 'DONE'),
     )
 
-    userStory = models.ForeignKey(UserStory, null=True, blank=True, default=None)
+    userStory = models.ForeignKey(userstory, null=True, blank=True, default=None)
     actividad = models.ForeignKey(actividad, null=True, blank=True, default=None)
     estado = models.CharField(max_length=1, choices=ESTADO, default=0)
 

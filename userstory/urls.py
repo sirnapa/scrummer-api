@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
-from UserStory import views
+from userstory import views
 
 router = DefaultRouter(trailing_slash=False)
-router.register(r'userStory',views.UserStoryViewSet)
+router.register(r'userstory',views.UserStoryViewSet)

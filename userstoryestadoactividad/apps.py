@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class UserstoryestadoactividadConfig(AppConfig):
-    name = 'UserStoryEstadoActividad'
+    name = 'userstoryestadoactividad'

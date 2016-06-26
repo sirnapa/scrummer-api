@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'permission',
     'proyecto',
     'rol',
-    'UserStory',
+    'userstory',
     'Sprint',
     'flujo',
     'actividad',
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'Historial',
     'Adjunto',
     'plantilladeflujo',
-    'UserStoryEstadoActividad',
+    'userstoryestadoactividad',
     'corsheaders',
     'rest_framework_json_api',
 ]
