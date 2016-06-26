@@ -20,19 +20,13 @@ from Sprint import views as viewsSprint
 from scrummer import views
 from actividad import views as viewsActividad
 from flujo import views as viewsFlujo
-from plantilla_de_flujo import views as viewsPlantilla_de_Flujo
 from Nota import views as viewsNota
 from Historial import views as viewsHistorial
 from Adjunto import views as viewsAdjunto
 from UserStoryEstadoActividad import views as viewsUserStoryEstadoActividad
-
-
-
+from plantilladeflujo import views as viewsPlantillaDeFlujo
 
 import permission; permission.autodiscover()
-
-
-
 
 router = DefaultRouter(trailing_slash=False)
 
@@ -45,14 +39,14 @@ router.register(r'proyectos', viewsProyecto.proyectoViewSet)
 router.register(r'roles',viewsRol.rolViewSet)
 router.register(r'userStories', viewsUserStory.UserStoryViewSet)
 router.register(r'sprints', viewsSprint.SprintViewSet)
-router.register(r'actividad', viewsActividad.actividadViewSet)
-router.register(r'flujo', viewsFlujo.flujoViewSet)
-router.register(r'plantilla-de-flujos',viewsPlantilla_de_Flujo.plantilla_de_flujoViewSet)
+router.register(r'actividades', viewsActividad.actividadViewSet)
+router.register(r'flujos', viewsFlujo.flujoViewSet)
 router.register(r'usuarios', views.UsuarioViewSet)
 router.register(r'notas', viewsNota.NotaViewSet)
 router.register(r'historiales', viewsHistorial.HistorialViewSet)
 router.register(r'adjuntos',viewsAdjunto.AdjuntoViewSet)
 router.register(r'userStoryEstadoActividades', viewsUserStoryEstadoActividad.UserStoryEstadoActividadViewSet)
+router.register(r'plantilladeflujos', viewsPlantillaDeFlujo.PlantillaDeFlujoViewSet)
 # Wire up our API using automatic URL routing...
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
