@@ -13,11 +13,10 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('Nota', '0001_initial'),
-        ('Adjunto', '0001_initial'),
+        ('nota', '0001_initial'),
+        ('adjunto', '0001_initial'),
         ('flujo', '0001_initial'),
-        ('Historial', '0001_initial'),
-        ('Sprint', '0004_auto_20160618_2056'),
+        ('historial', '0001_initial'),
     ]
 
     operations = [
@@ -30,11 +29,11 @@ class Migration(migrations.Migration):
                 ('tiempoEstimado', models.SmallIntegerField(default=0)),
                 ('tiempoReal', models.SmallIntegerField(default=0)),
                 ('prioridad', models.CharField(choices=[('0', 'Baja'), ('1', 'Media'), ('2', 'Alta')], default=0, max_length=1)),
-                ('adjunto', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='Adjunto.Adjunto')),
+                ('adjunto', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='adjunto.adjunto')),
                 ('flujo', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='flujo.flujo')),
-                ('historial', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='Historial.Historial')),
-                ('nota', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='Nota.Nota')),
-                ('sprint', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='Sprint.Sprint')),
+                ('historial', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='historial.historial')),
+                ('nota', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='nota.nota')),
+                ('sprint', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='sprint.sprint')),
                 ('usuario', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={

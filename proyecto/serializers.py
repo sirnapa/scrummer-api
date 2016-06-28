@@ -6,7 +6,7 @@ class proyectoSerializer(serializers.ModelSerializer):
     #links = serializers.SerializerMethodField('get_links')
     class Meta:
         model = proyecto
-        fields = ('nombre','descripcion','fechaInicio','fechaFin',)
+        fields = ('nombre','descripcion','fechainicio','fechafin',)
 
     def get_links(self, obj):
         request = self.context['request']

@@ -8,7 +8,7 @@ class rolSerializer(serializers.ModelSerializer):
     #links=serializers.SerializerMethodField()
     class Meta:
         model = rol
-        fields = ( 'nombre','nombre_display','permisos_del_rol','asignado', 'proyecto')
+        fields = ( 'nombre','nombre_display','permisosdelrol','asignado', 'proyecto')
 
     def get_nombre_display(self,obj):
         return obj.get_nombre_display()

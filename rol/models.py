@@ -27,7 +27,7 @@ class rol(modelsdb.Model):
     proyecto = modelsdb.ForeignKey(proyecto, null=True, blank=True, default=None)
     nombre = modelsdb.SmallIntegerField(choices=NOMBRE_CHOICES, default= NOMBRE_ADMINISTRADOR)
     asignado = modelsdb.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True)
-    permisos_del_rol= modelsdb.ManyToManyField(models.Permission,verbose_name=('permisos_del_rol'),
+    permisosdelrol= modelsdb.ManyToManyField(models.Permission,verbose_name=('permisosdelrol'),
                                                blank=True,
                                                help_text=('Especifica permisos del rol'),
                                                related_name="rol_set",

@@ -7,16 +7,11 @@ from django.dispatch import receiver
 # Create your models here.
 
 
-class Usuario(models.Model):
-    user = models.OneToOneField(User, primary_key=True, related_name='profile')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-  #  nombre = models.CharField(max_length=30, null=True)
-   # apellido = models.CharField(max_length=30, null=True)
-    # direccion = models.CharField(max_length=150, null=True)
-    # telefono = models.CharField(max_length=150, null=True)
-    # observacion = models.CharField(max_length=150, null=True)
-    # estado = models.BooleanField(default=False)
+class usuario(models.Model):
+    user = models.OneToOneField(User, primary_key=True, related_name='usuario')
+    createdat = models.DateTimeField(auto_now_add=True)
+    updatedat = models.DateTimeField(auto_now=True)
+    estado = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.user.username
@@ -24,10 +19,10 @@ class Usuario(models.Model):
     @receiver(post_save, sender=User)
     def create_profile_for_user(sender, instance=None, created=False, **kwargs):
         if created:
-            Usuario.objects.get_or_create(user=instance)
+            usuario.objects.get_or_create(user=instance)
 
     @receiver(pre_delete, sender=User)
     def delete_profile_for_user(sender, instance=None, **kwargs):
         if instance:
-            user_profile = Usuario.objects.get(user=instance)
+            user_profile = usuario.objects.get(user=instance)
             user_profile.delete()

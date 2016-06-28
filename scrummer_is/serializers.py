@@ -1,4 +1,4 @@
-from scrummer.models import Usuario
+from scrummer.models import usuario
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
@@ -31,16 +31,18 @@ class UsuarioSerializer(serializers.ModelSerializer):
         id = serializers.IntegerField(source='pk', read_only=True)
         username = serializers.CharField(source='user.username', required=True)
         email = serializers.CharField(source='user.email')
-        first_name = serializers.CharField(source='user.first_name')
-        last_name = serializers.CharField(source='user.last_name')
+        firstname = serializers.CharField(source='user.first_name')
+        lastname = serializers.CharField(source='user.last_name')
+        estado = serializers.BooleanField(source='user.is_active')
+        password = serializers.CharField(source='user.password')
 
         class Meta:
-                model = Usuario
+                model = usuario
                 fields = (
-                        'id', 'username', 'email', 'first_name', 'last_name',
-                        'created_at', 'updated_at', 'url',
+                        'id', 'username', 'email', 'firstname', 'lastname','estado','password',
+                        'createdat', 'updatedat', 'url',
                 )
-                read_only_fields = ('created_at', 'updated_at', 'url')
+                read_only_fields = ('createdat', 'updatedat', 'url')
 
         def update(self, instance, validated_data):
                 # First, update the User
@@ -59,4 +61,4 @@ class UsuarioSerializer(serializers.ModelSerializer):
                 user_data = validated_data.pop('user')
                 user = User.objects.create(**user_data)
 
-                return Usuario(user=user, **validated_data)
+                return usuario(user=user, **validated_data)

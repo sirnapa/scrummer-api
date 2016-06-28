@@ -1,4 +1,4 @@
-from scrummer.models import Usuario
+from scrummer.models import usuario
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from scrummer_is.serializers import UserSerializer, GroupSerializer, UsuarioSerializer
@@ -29,5 +29,5 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 class UsuarioViewSet(viewsets.ModelViewSet):
-    queryset = Usuario.objects.order_by('user')
+    queryset = usuario.objects.order_by('user')
     serializer_class = UsuarioSerializer
