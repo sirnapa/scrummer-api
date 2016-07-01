@@ -40,7 +40,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
                 model = usuario
                 fields = (
                         'id', 'username', 'email', 'firstname', 'lastname','estado','password',
-                        'createdat', 'updatedat', 'url',
+                        'createdat', 'updatedat', 'url', 'direccion', 'telefono', 'observacion', 'rol'
                 )
                 read_only_fields = ('createdat', 'updatedat', 'url')
 

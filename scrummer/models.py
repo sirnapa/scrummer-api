@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
+from rol.models import rol
 from django.db.models.signals import pre_delete, post_save
 from django.dispatch import receiver
 
@@ -12,6 +13,10 @@ class usuario(models.Model):
     createdat = models.DateTimeField(auto_now_add=True)
     updatedat = models.DateTimeField(auto_now=True)
     estado = models.BooleanField(default=False)
+    direccion = models.CharField(max_length=150, null=True)
+    telefono = models.CharField(max_length=150, null=True)
+    observacion = models.CharField(max_length=150, null=True)
+    rol = models.ForeignKey(rol, null=True, blank=True, default=None)
 
     def __unicode__(self):
         return self.user.username
