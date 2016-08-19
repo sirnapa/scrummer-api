@@ -25,5 +25,3 @@ class DefaultsMixin(object):
 class actividadViewSet(viewsets.ModelViewSet):
     queryset = actividad.objects.order_by('nombre')
     serializer_class = actividadSerializer
-
-

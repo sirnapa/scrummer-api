@@ -9,6 +9,6 @@ class UserStorySerializer(serializers.ModelSerializer):
         flujo = serializers.SlugRelatedField(
             slug_field=flujo.pk, read_only=True)
         model = userstory
-        fields = ('descripcion', 'usuario', 'valornegocio', 'tiempoestimado', 'tiemporeal', 'sprint', 'flujo', 'prioridad',
+        fields = ('descripcion', 'usuario', 'valornegocio', 'tiempoestimado', 'tiemporeal', 'sprint', 'flujo','proyecto', 'prioridad',
                   'historial','adjunto',)
 

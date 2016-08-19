@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from sprint.models import sprint
 from flujo.models import flujo
+from proyecto.models import proyecto
 from historial.models import historial
 from adjunto.models import adjunto
 from nota.models import nota
@@ -14,11 +15,6 @@ class userstory (models.Model):
         verbose_name = 'userstory'
         verbose_name_plural = 'userstories'
 
-    PRIORIDAD = (
-        ('0', 'Baja'),
-        ('1', 'Media'),
-        ('2', 'Alta'),
-    )
 
     descripcion = models.CharField(max_length=150)
     usuario = models.ForeignKey(User, null=True, blank=True, default=None)
@@ -27,7 +23,8 @@ class userstory (models.Model):
     tiemporeal = models.SmallIntegerField(default=0)
     sprint = models.ForeignKey(sprint, null=True, blank=True, default=None)
     flujo = models.ForeignKey(flujo, null=True, blank=True, default=None)
-    prioridad = models.CharField(max_length=1, choices=PRIORIDAD, default=0)
+    proyecto = models.ForeignKey(proyecto, null=True, blank=True, default=None)
+    prioridad = models.CharField(max_length=50)
     historial = models.ForeignKey(historial, null=True, blank=True, default=None)
     adjunto = models.ForeignKey(adjunto, null=True, blank=True, default=None)
     def __unicode__(self):

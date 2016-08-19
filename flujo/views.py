@@ -26,7 +26,15 @@ class DefaultsMixin(object):
     paginate_by = 25
     paginate_by_param = 'page_size'
     max_paginate_by = 100
+
 class flujoViewSet(viewsets.ModelViewSet):
     queryset = flujo.objects.order_by('nombre')
     serializer_class = flujoSerializer
 
+    def get_queryset(self):
+
+        queryset = flujo.objects.all()
+        proyecto = self.request.query_params.get('proyecto', None)
+        if proyecto is not None:
+            queryset = queryset.filter(proyecto=proyecto)
+        return queryset

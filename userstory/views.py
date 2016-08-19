@@ -26,3 +26,9 @@ class UserStoryViewSet(viewsets.ModelViewSet):
     queryset = userstory.objects.order_by('descripcion')
     serializer_class = UserStorySerializer
 
+    def get_queryset(self):
+        queryset = userstory.objects.all()
+        proyecto = self.request.query_params.get('proyecto', None)
+        if proyecto is not None:
+            queryset = queryset.filter(proyecto=proyecto)
+        return queryset

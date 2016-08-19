@@ -28,3 +28,9 @@ class SprintViewSet(viewsets.ModelViewSet):
     queryset = sprint.objects.order_by('estado')
     serializer_class = SprintSerializer
 
+    def get_queryset(self):
+        queryset = sprint.objects.all()
+        proyecto = self.request.query_params.get('proyecto', None)
+        if proyecto is not None:
+            queryset = queryset.filter(proyecto=proyecto)
+        return queryset

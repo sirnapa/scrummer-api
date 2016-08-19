@@ -81,7 +81,7 @@ REST_FRAMEWORK = {
 
 
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated','rest_framework.permissions.DjangoObjectPermissions'),
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 50,
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
     'TEST_REQUEST_RENDERER_CLASSES': (
         'rest_framework.renderers.MultiPartRenderer',
